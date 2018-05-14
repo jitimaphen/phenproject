@@ -46,7 +46,7 @@
            {% for product in book %}
              <div class="well">
 
-                <div><img src="../../static/book_management/images/{{ product.picbook }}" class="img-rounded"  width="304" height="400">
+                <div><img src="{{ product.picbook.url }}" class="img-rounded"  width="304" height="400">
                     <br>
                     <h3>Book Name : {{ product.bookname }} </h3><br>
                     <p>More information : {{ product.info }}</p> <br>

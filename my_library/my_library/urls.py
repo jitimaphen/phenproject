@@ -4,6 +4,8 @@ from django.urls import path
 from django.conf.urls import url, include
 from rest_framework import routers
 from book_management import viewsapi, views
+from django.conf import settings
+from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
 router.register(r'users', viewsapi.UserViewSet)
@@ -25,4 +27,4 @@ urlpatterns = [
     # path('articles/<int:year>/', views.year_archive, name='news-year-archive'),
     # url(r'^blogadmin', include('book_management.urls'))
 
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
